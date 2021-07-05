@@ -11,4 +11,6 @@ public interface StudentService {
     Student saveStudent(Student newStudent);
 
     void deleteStudent(Long id);
+
+    void updateStudent(Long id, String name, String email);
 }
