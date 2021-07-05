@@ -32,4 +32,13 @@ public class StudentServiceImpl implements StudentService {
         }
         return repository.save(newStudent);
     }
+
+    @Override
+    public void deleteStudent(Long id) {
+        boolean exists = repository.existsById(id);
+        if(!exists) {
+            throw new IllegalStateException("id not found");
+        }
+        repository.deleteById(id);
+    }
 }
